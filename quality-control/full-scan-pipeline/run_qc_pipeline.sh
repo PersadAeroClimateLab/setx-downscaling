@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # run_qc_pipeline.sh -- run the entire SETx-1km-CMIP6 Zarr QC end to end.
 #
+# Author: Ifeanyichukwu C. Nduka (icnduka@jsg.utexas.edu)
+#
 #   qc_zarr_all.py  ->  write_issue_csvs.py  ->  drilldown_qc.py
 #     ->  classify_footprint.py  ->  make_bad_dates.sh  ->  plot_bad_dates.py
 #
