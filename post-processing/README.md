@@ -1,11 +1,12 @@
 # Post Processing
 
-The raw SETx netCDF files are output as individual timesteps per variable, per model, per scenario, resulting in an unwieldy collection of roughly 15 million files. To make the data usable, this post-processing step consolidates the individual netCDF files into chunked Zarr stores in four stages:
+The raw SETx netCDF files are output as individual timesteps per variable, per model, per scenario, resulting in an unwieldy collection of roughly 15 million files. To make the data usable, this post-processing step consolidates the individual netCDF files into chunked Zarr stores and then repackages them for distribution, in five stages:
 
 1. Build empty template Zarr stores with the correct metadata and coordinates.
 2. Fill the templates with data from the raw netCDF/Zarr sources.
 3. Scan the filled stores for corrupted or missing timesteps.
 4. Recompute the bad timesteps and swap them into the store.
+5. (optional for analysis, required for distribution) CMORize the finished stores into standard CMIP6-style netCDF output.
 
 ## 1. Building Template Zarr Stores
 
@@ -67,3 +68,27 @@ client = Client(cluster)
 
 results = dask.compute(*orders)
 ```
+
+## 5. CMORizing the Output
+
+Once a variable's data has been fully assembled and cleaned in Zarr form, `cmorization.py` converts it into the directory and file layout expected of CMIP6-style archives (CMOR/DRS). It is meant to be run directly as a script (`python cmorization.py`), not imported, and makes two passes over every Zarr store under the input directory.
+
+### Pass 1: Standardizing Metadata
+
+For every Zarr store (including `pr`), the script rewrites its attributes in place so they conform to the CMIP6/DRS convention:
+
+- Parses `model`, `scenario`, `variable`, and `period` from the store's filename, and maps the internal `hist` scenario name to `historical`.
+- Drops legacy/inconsistent global attributes left over from earlier steps (`variant_label`, `activity`, `institution`, `source`, `scenario`, `experiment`, `resolution_id`, `doi`).
+- Replaces them with the standardized DRS attributes needed for Pass 2 (`activity_id`, `region_id`, `institution_id`, `source_id`, `driving_mip_era`, `driving_activity_id`, `driving_source_id`, `driving_experiment_id`, `driving_variant_label`, `variable_id`, `version`), plus `Conventions`, `nominal_resolution`, and lat/lon resolution attributes.
+- Looks up each data variable (and its `_SE` standard-error counterpart) against fixed tables of units, CF standard names, and cell methods, and writes those as per-variable attributes with standard-error variables recieving `" standard_error"` appended to their name and an explanatory comment.
+- Writes the updated attributes back into the existing Zarr store's metadata only (via `zarr.open_group(..., mode="r+")`) and re-consolidates the store's metadata afterward.
+
+### Pass 2: Exporting to CMOR/DRS netCDF
+
+With the attributes now standardized, the script re-opens every Zarr store except `pr`:
+
+- Builds a Data Reference Syntax (DRS) output directory from the attributes written in Pass 1: `<activity_id>/<region_id>/<institution_id>/<source_id>/<driving_mip_era>/<driving_activity_id>/<driving_experiment_id>/<driving_source_id>/<driving_variant_label>/<frequency>/<variable_id>/<version>`.
+- Splits the data by calendar year and writes one netCDF file per year, named from those same attributes plus the year's start/end dates, each tagged with a freshly generated `tracking_id`.
+- Skips any output file that already exists, so the script can be re-run safely to pick up new or missing years without redoing existing ones.
+
+Note that `pr` is standardized in Pass 1 along with every other variable, but is currently excluded from the Pass 2 export.
