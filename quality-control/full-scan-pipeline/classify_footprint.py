@@ -3,6 +3,8 @@
 classify_footprint.py  --  Find days/stores that are MISSING a chunk of the inland
 domain, measured against a complete reference variable (tas).
 
+Author: Ifeanyichukwu C. Nduka (icnduka@jsg.utexas.edu)
+
 Why a reference: deriving the land mask from a store's own valid-fraction fails
 when a region is absent on most days -- it then looks like ocean and is never
 flagged (the bug that let the NE-corner-missing days slip through). tas is

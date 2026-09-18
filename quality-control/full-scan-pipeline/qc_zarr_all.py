@@ -2,6 +2,8 @@
 """
 qc_zarr_all.py  --  Zarr-only QC scanner for the SETx-1km-CMIP6 stores.
 
+Author: Ifeanyichukwu C. Nduka (icnduka@jsg.utexas.edu)
+
 Reads each Zarr store's CONTENT (no NetCDF comparison) and scans for:
   * MISSING days      -- calendar-complete date audit (store's own calendar)
   * EMPTY days        -- whole-field NaN

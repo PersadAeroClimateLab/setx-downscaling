@@ -16,6 +16,8 @@ Use this when you want a repeatable, script-based pass/fail check with a stable 
 
 ## `full-scan-pipeline`
 
+Developed by Dr. Ifeanyichukwu C. Nduka (icnduka@jsg.utexas.edu).
+
 A chain of standalone scripts, run in sequence by `run_qc_pipeline.sh`, that scans every store far more exhaustively and ends in a curated list of bad dates plus per-date plots for a human to review and decide clip vs. re-downscale. Config (paths, worker count, thresholds) is overridden via environment variables (see the top of `run_qc_pipeline.sh`).
 
 Expected outputs: `qc_zarr_out/SUMMARY.txt`, `qc_drilldown_out/DRILLDOWN_SUMMARY.txt`, `issues_by_variable/<var>_issues.csv`, `footprint_out/footprint_classification.csv` + `footprint_maps.pdf`, `bad_dates.csv`, and `bad_date_plots/<variable>/<model>_<scenario>_<date>.png`.

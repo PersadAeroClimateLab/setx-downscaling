@@ -3,6 +3,8 @@
 # Run this LAST, after qc_zarr_all -> write_issue_csvs -> drilldown -> classify_footprint,
 # so it accounts for all checks. Then feed bad_dates.csv to plot_bad_dates.py.
 #
+# Author: Ifeanyichukwu C. Nduka (icnduka@jsg.utexas.edu)
+#
 # Sources:
 #   issues_by_variable/*_issues.csv     every flagged date that is NOT benign wobble
 #                                       (out-of-range, incoherent/blowup, constant,

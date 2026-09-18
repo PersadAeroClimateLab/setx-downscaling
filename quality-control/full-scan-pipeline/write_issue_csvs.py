@@ -2,6 +2,8 @@
 """
 write_issue_csvs.py  --  One issues CSV per variable from qc_zarr_all.py output.
 
+Author: Ifeanyichukwu C. Nduka (icnduka@jsg.utexas.edu)
+
 Reads each store's *_incomplete_dates.csv and *_oob_dates.csv under --qc-dir and
 emits, per variable, a flat list of every flagged (date, issue):
 

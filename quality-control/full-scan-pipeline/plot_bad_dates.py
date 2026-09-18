@@ -3,6 +3,8 @@
 plot_bad_dates.py -- plot every date in bad_dates.csv (day-1 / day / day+1) into a
 labeled directory for quick visual review, so you can decide clip vs re-downscale.
 
+Author: Ifeanyichukwu C. Nduka (icnduka@jsg.utexas.edu)
+
 For each bad date it saves  <out>/<variable>/<model>_<scenario>_<date>.png
 with the three-panel neighbour view (NaN cells magenta, shared colour scale) and
 the flagged issue(s) in the title. Stores are opened once and all their bad dates

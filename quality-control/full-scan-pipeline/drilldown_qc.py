@@ -2,6 +2,8 @@
 """
 drilldown_qc.py  --  Summarise the per-store CSVs written by qc_zarr_all.py.
 
+Author: Ifeanyichukwu C. Nduka (icnduka@jsg.utexas.edu)
+
 Reads each store's *_incomplete_dates.csv, *_oob_dates.csv, *_missing_dates.csv
 (and qc_zarr_summary.csv for land_cells / SE / dedup) and separates:
 
