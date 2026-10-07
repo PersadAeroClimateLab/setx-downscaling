@@ -23,3 +23,6 @@ A chain of standalone scripts, run in sequence by `run_qc_pipeline.sh`, that sca
 Expected outputs: `qc_zarr_out/SUMMARY.txt`, `qc_drilldown_out/DRILLDOWN_SUMMARY.txt`, `issues_by_variable/<var>_issues.csv`, `footprint_out/footprint_classification.csv` + `footprint_maps.pdf`, `bad_dates.csv`, and `bad_date_plots/<variable>/<model>_<scenario>_<date>.png`.
 
 Use this for a comprehensive, exploratory audit. Its output is meant to be thoroughly reviewed by a person, not consumed as an automated pass/fail signal.
+
+
+Also, a post netCDF conversion script is  included in the full scan pipeline `compare_nc_zarr_diagnostics.py` to compare th Zarr Store and the Written NetCCDF files to ensure consistency.
