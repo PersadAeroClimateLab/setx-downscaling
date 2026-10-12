@@ -25,18 +25,6 @@ sources, then compares them:
                  SE_NEG, SE_ABOVE_CEIL, SE_COV_ANOM.
                  Each flagged date is labelled BOTH / NC_ONLY / ZARR_ONLY.
 
-Design lessons from earlier QC scripts are kept:
-  * Median per-day NaN count is the coverage baseline (not a union land mask).
-  * All arithmetic is float64 (no float32 overflow near the -3.4e38 sentinel).
-  * Fill sentinel is tested with a magnitude guard, never by subtraction.
-  * hist <-> historical alias. Mixed noleap / standard calendars: dates are
-    matched as YYYY-MM-DD strings, so no calendar conversion is done.
-  * Mixed Zarr v2/v3: xarray open first; manual zarr-python opener as fallback.
-  * All variables, sfcWind included, are read from the one Zarr root (--zarr-root).
-  * Memory-bounded block reads; one pair per worker process (netCDF-C is not
-    thread-safe, so parallelism is by process, not thread).
-  * Resumable: pairs already in the summary CSV are skipped on restart.
-
 NC tree (walked recursively, parsed from the file name):
   <nc-root>/CMIP/<scenario>/<MODEL>/r1i1p1f1/day/<var>/v20260720/
       <var>_NAM_SETx-UTAustin_KrigR_CMIP6_<scenario>_<MODEL>_<member>_day_<YYYYMMDD>-<YYYYMMDD>.nc
