@@ -26,9 +26,6 @@ near the top, then runs the full evaluation for that variable.
 | `rlds_publication.py` | Downwelling longwave radiation (no station obs) | 9 figures, 2 CSVs |
 | `rsds_publication.py` | Downwelling shortwave radiation (no station obs) | 9 figures, 2 CSVs |
 
-`HANDOFF_variable_evaluation_scripts.md` is the design reference: the full figure
-catalog, the GHCN-D input details, and the technical learnings behind the code.
-
 ## Station observations and the figure count
 
 Some variables have a direct GHCN-D station measurement and some do not. The
@@ -74,4 +71,4 @@ netCDF4, scipy, matplotlib, and dask. Cartopy is optional (high-resolution
 coastlines; a built-in Gulf Coast fallback covers the offline case), and GDAL or
 rioxarray is optional (reading the WorldCover land-cover raster). CDO is used
 outside Python. These dependencies are folded into the archive's top-level
-`requirements.txt`; confirm the pins against your environment before release.
+`requirements.txt`.
