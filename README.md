@@ -231,8 +231,5 @@ We thank the following people for their contributions to this project:
 ## License and citation
 
 The source code is released under the BSD 3-Clause License (see [`LICENSE.md`](LICENSE.md)).
-Figures and other non-code outputs are released under the Creative Commons
-Attribution 4.0 International License (CC BY 4.0, see
-[`LICENSE-CC-BY-4.0`](LICENSE-CC-BY-4.0)). Both files hold the full license text.
 Downscaled data products are deposited separately. For citation, see
 [setx-uifl.org](https://setx-uifl.org), and DOI:XXXXX.
