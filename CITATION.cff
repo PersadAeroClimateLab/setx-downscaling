@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it using the metadata below."
+title: "SETx-1km-CMIP6: A 1 km dual-kriging downscaled NEX-GDDP-CMIP6 dataset for Eastern Texas (code)"
+type: software
+version: "v1.0.0"
+date-released: "2026-10-28"
+doi: "PLACEHOLDER"
+license: BSD 3-Clause License
+repository-code: "PLACEHOLDER-REPO-URL"
+abstract: >-
+  This contains code that downscales NEX-GDDP-CMIP6 model output to 1 km daily fields over East Texas with universal kriging (KrigR), and the codes that run quality control and evaluation on those fields. It covers eight variables: near-surface air temperature (tas), daily maximum and minimum temperature (tasmax, tasmin), near-surface wind speed (sfcWind), specific and relative humidity (huss, hurs), and downwelling longwave and shortwave radiation (rlds, rsds). The downscaling stage uses a gated pipeline that enforces a per-iteration coverage gate and deletes failing timesteps. Precipitation (pr) is out of scope.
+keywords:
+  - CMIP6
+  - NEX-GDDP-CMIP6
+  - statistical downscaling
+  - kriging
+  - KrigR
+  - East Texas
+  - Southeast Texas
+  - quality control
+  - evaluation
+authors:
+  - family-names: "Nduka"
+    given-names: "Ifeanyichukwu C."
+    orcid: "https://orcid.org/0000-0002-1978-7048"
+    affiliation: "Persad AeroClimate Lab, Department of Earth and Planetary Sciences, University of Texas at Austin"
+	
+  - family-names: "Cummins"
+    given-names: "Cameron"
+    orcid: "https://orcid.org/0000-0002-5526-966X"
+    affiliation: "Persad AeroClimate Lab, Department of Earth and Planetary Sciences, University of Texas at Austin"
+	
+  - family-names: "Persad"
+    given-names: "Geeta"
+    orcid: "https://orcid.org/0000-0003-4690-0867"
+    affiliation: "Persad AeroClimate Lab, Department of Earth and Planetary Sciences, University of Texas at Austin"

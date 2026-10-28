@@ -1,0 +1,7 @@
+Documentation license
+=================================
+
+The code in this archive is licensed under the BSD 3-Clause License (see LICENSE).
+
+The Zenodo record carries one license field. This record sets that field to
+BSD 3-Clause License.

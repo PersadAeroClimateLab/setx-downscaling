@@ -1,0 +1,43 @@
+{
+  "title": "SETx-1km-CMIP6: A 1 km dual-kriging downscaled NEX-GDDP-CMIP6 dataset for Eastern Texas (code)",
+  "upload_type": "software",
+  "description": "This contains code that downscales NEX-GDDP-CMIP6 model output to 1 km daily fields over East Texas with universal kriging (KrigR), and the codes that run quality control and evaluation on those fields. It covers eight variables: near-surface air temperature (tas), daily maximum and minimum temperature (tasmax, tasmin), near-surface wind speed (sfcWind), specific and relative humidity (huss, hurs), and downwelling longwave and shortwave radiation (rlds, rsds). The downscaling stage uses a gated pipeline that enforces a per-iteration coverage gate and deletes failing timesteps. Precipitation (pr) is out of scope. Documentation is licensed BSD 3-Clause License; see LICENSE-docs.txt.",
+  "version": "v1.0.0",
+  "language": "eng",
+  "access_right": "open",
+  "license": "BSD 3-Clause",
+  "keywords": [
+    "CMIP6",
+    "NEX-GDDP-CMIP6",
+    "statistical downscaling",
+    "kriging",
+    "KrigR",
+    "East Texas",
+	"Southeast Texas",
+    "climate projections",
+    "quality control",
+    "evaluation",
+    "coverage gate"
+  ],
+  "creators": [
+    {
+      "name": "Nduka, Ifeanyichukwu C.",
+      "affiliation": "Persad AeroClimate Lab, Department of Earth and Planetary Sciences, University of Texas at Austin",
+      "orcid": "0000-0002-1978-7048"
+    }
+	{
+      "name": "Cummins, Cameron.",
+      "affiliation": "Persad AeroClimate Lab, Department of Earth and Planetary Sciences, University of Texas at Austin",
+      "orcid": "0000-0002-5526-966X"
+    }
+	{
+      "name": "Persad, Geeta.",
+      "affiliation": "Persad AeroClimate Lab, Department of Earth and Planetary Sciences, University of Texas at Austin",
+      "orcid": "0000-0003-4690-0867"
+    }
+  ],
+  "related_identifiers": [
+    { "relation": "isDerivedFrom", "identifier": "https://doi.org/10.25981/esgf.drcdp.cmip6/17426211", "scheme": "doi" }
+  ],
+  "notes": "Site-specific absolute paths are written as descriptive placeholders (/PATH/TO/WORKING_DIR, /PATH/TO/SOURCE_DATA, /PATH/TO/rstudio-rocker.sif); set them before running."
+}
