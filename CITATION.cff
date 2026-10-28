@@ -8,7 +8,7 @@ doi: "PLACEHOLDER"
 license: BSD 3-Clause License
 repository-code: "PLACEHOLDER-REPO-URL"
 abstract: >-
-  This contains code that downscales NEX-GDDP-CMIP6 model output to 1 km daily fields over East Texas with universal kriging (KrigR), and the codes that run quality control and evaluation on those fields. It covers eight variables: near-surface air temperature (tas), daily maximum and minimum temperature (tasmax, tasmin), near-surface wind speed (sfcWind), specific and relative humidity (huss, hurs), and downwelling longwave and shortwave radiation (rlds, rsds). The downscaling stage uses a gated pipeline that enforces a per-iteration coverage gate and deletes failing timesteps. Precipitation (pr) is out of scope.
+  This includes codes that downscale NEX-GDDP-CMIP6 model output to 1-km daily fields over East Texas using universal kriging (KrigR), and codes that run quality control and evaluation on those fields. It covers eight variables: near-surface air temperature (tas), daily maximum and minimum temperature (tasmax, tasmin), near-surface wind speed (sfcWind), specific and relative humidity (huss, hurs), and downwelling longwave and shortwave radiation (rlds, rsds). The downscaling stage uses a gated pipeline that enforces a per-iteration coverage gate and deletes failing timesteps. Precipitation (pr) is out of scope.
 keywords:
   - CMIP6
   - NEX-GDDP-CMIP6
