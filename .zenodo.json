@@ -1,7 +1,7 @@
 {
   "title": "SETx-1km-CMIP6: A 1 km dual-kriging downscaled NEX-GDDP-CMIP6 dataset for Eastern Texas (code)",
   "upload_type": "software",
-  "description": "This includes codes that downscale NEX-GDDP-CMIP6 model output to 1-km daily fields over East Texas using universal kriging (KrigR), and codes that run quality control and evaluation on those fields. It covers eight variables: near-surface air temperature (tas), daily maximum and minimum temperature (tasmax, tasmin), near-surface wind speed (sfcWind), specific and relative humidity (huss, hurs), and downwelling longwave and shortwave radiation (rlds, rsds). The downscaling stage uses a gated pipeline that enforces a per-iteration coverage gate and deletes failing timesteps. Precipitation (pr) is out of scope. Documentation is licensed BSD 3-Clause License; see LICENSE-docs.txt.",
+  "description": "This release includes codes that downscale NEX-GDDP-CMIP6 model output to 1-km daily fields over East Texas using dual-kriging (KrigR), and codes for quality control and evaluation of those fields. It covers eight variables: near-surface air temperature (tas), daily maximum and minimum temperature (tasmax, tasmin), near-surface wind speed (sfcWind), specific and relative humidity (huss, hurs), and downwelling longwave and shortwave radiation (rlds, rsds). The downscaling stage uses a gated pipeline that enforces a per-iteration coverage gate and deletes failing timesteps. Precipitation (pr) is out of scope. The code and documentation are licensed under the BSD 3-Clause License.; see LICENSE-docs.txt.",
   "version": "v1.0.0",
   "language": "eng",
   "access_right": "open",
