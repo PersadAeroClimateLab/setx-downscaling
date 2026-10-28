@@ -5,7 +5,7 @@
   "version": "v1.0.0",
   "language": "eng",
   "access_right": "open",
-  "license": "BSD 3-Clause",
+  "license": "BSD-3-Clause",
   "keywords": [
     "CMIP6",
     "NEX-GDDP-CMIP6",
